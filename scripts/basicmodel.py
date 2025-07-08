@@ -13,7 +13,8 @@ import os
 import pandas as pd
 from datetime import datetime
 
-df = pd.read_csv(r"G:\Working\Students\Undergraduate\For_Vince\Python\surface_points_final.csv")
+surface_csv_url = 'https://raw.githubusercontent.com/john-smith229000/gempy_data/master/csv/surface_points_final.csv'
+df = pd.read_csv(surface_csv_url)
 xmin, xmax = df["X"].min(), df["X"].max()
 ymin, ymax = df["Y"].min(), df["Y"].max()
 zmin, zmax = df["Z"].min(), df["Z"].max()

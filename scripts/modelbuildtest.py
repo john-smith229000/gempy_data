@@ -11,6 +11,7 @@ import pyvista as pv
 from gempy_engine.core.data.stack_relation_type import StackRelationType
 import os
 import pandas as pd
+from datetime import datetime
 
 df = pd.read_csv(r"G:\Working\Students\Undergraduate\For_Vince\Python\surface_points_final.csv")
 xmin, xmax = df["X"].min(), df["X"].max()
@@ -24,8 +25,10 @@ export_dir = os.path.join(os.path.expanduser("~"), "gempy_exports")
 os.makedirs(export_dir, exist_ok=True)
 
 # Export paths
-obj_path = os.path.join(export_dir, "gempy_test.obj")
-gltf_path = os.path.join(export_dir, "gempy_test.gltf")
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+obj_path = os.path.join(export_dir, f"gempy_model_{timestamp}.obj")
+gltf_path = os.path.join(export_dir, f"gempy_model_{timestamp}.gltf")
 # sphinx_gallery_thumbnail_number = 2
 
 

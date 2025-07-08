@@ -90,6 +90,8 @@ back_transformed_vertices
 print("Ready to plot")
 plotter = gpv.plot_3d(data, show=False)
 
+print(f"Exporting to: {obj_path}")
+print("Does folder exist?", os.path.exists(export_dir))
 plotter.p.export_obj(obj_path)
 plotter.p.export_gltf(gltf_path)
 
